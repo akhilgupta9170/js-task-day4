@@ -11,17 +11,22 @@ function getUserInfo(retry = 5){
             }
 
             console.log(`Retrying... Attempt ${retriesLeft}`);
-            return getUserInfo(retriesLeft);
+            setTimeout(()=>{ return getUserInfo(retriesLeft)}, 2000)
          }
          return resolve(response.json())
        })
-       .catch(error => {
+       
             console.error(`Max retries reached: ${error}`);
             reject(error);
-       });
+       
     })
+
 }
- 
+
 getUserInfo()
 .then(response => console.log(response))
 .catch(error => console.error(error));
+
+
+
+// Write a JavaScript function that retries a failed API call after a specified delay, up to a maximum number of retries.

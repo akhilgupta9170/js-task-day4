@@ -3,6 +3,7 @@
 function getDifferenceInDays(date1, date2) {
      date1 = new Date(date1);
      date2 = new Date(date2);
+    //  console.log(date1.getTime())
     let diffInMilliseconds = Math.abs(date2.getTime() - date1.getTime());
     let diffInDays = Math.ceil(diffInMilliseconds / (1000 * 60 * 60 * 24));
     return diffInDays;
