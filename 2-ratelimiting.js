@@ -4,28 +4,28 @@
 
 
 function rateLimiter(fn, times,wait){
-    // let isCalled = false;
-    // return function(){
-    //     if(!isCalled){
-    //         fn();
-    //         isCalled = true;
-    //         setTimeout(()=>{
-    //             isCalled = false;
-    //         }, 10000)
-    //     }
-    // }
-    let count = 0;
-    let timer;
+    let isCalled = false;
     return function(){
-        count++;
-        if(count <= times){
+        if(!isCalled){
             fn();
-            
-        } else{
-            clearTimeout(timer);
-            console.log("Rate limit exceeded");
+            isCalled = true;
+            setTimeout(()=>{
+                isCalled = false;
+            }, 10000)
         }
     }
+    // let count = 0;
+    // let timer;
+    // return function(){         
+    //     count++;
+    //     if(count <= times){
+    //         fn();
+            
+    //     } else{
+    //         clearTimeout(timer);
+    //         console.log("Rate limit exceeded");
+    //     }
+    // }
     
     
     }

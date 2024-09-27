@@ -18,5 +18,5 @@ function delayPromise(conditionCheckFn, delay = 1000) {
   });
 }
 delayPromise(conditionCheck)
-  .then((data) => console.log(data))
-  .catch((err) => console.log(err));
+  .then((data) => console.log("data====>",data))
+  .catch((err) => console.log("data====>",err));
