@@ -3,7 +3,7 @@
 function getWeekStartDate(date) {
 
     let weekday = date.getDay();
-    let adjustedDate = new Date(date);
+    let adjustedDate = date
     adjustedDate.setDate(adjustedDate.getDate() - weekday);
 
     
