@@ -5,7 +5,8 @@ function getSeconds(date){
 
     console.log(date1.toDateString());
     let seconds = date1.getSeconds();
-    console.log(seconds)
+    if (seconds<10)return "0"+seconds
+   
     return seconds
 }
-console.log(getSeconds("2018-01-01T12:39:46"))
+console.log(getSeconds("2018-01-01T12:39:01"))
